@@ -5,7 +5,7 @@ $(function() {
     
 
     var devouredBurger = {
-      devoured: true
+      devoured: 1
     };
 
     // Send the PUT request.
@@ -21,15 +21,15 @@ $(function() {
     );
   });
 
-  $("#make-it").on("submit", function(event) {
+  $("#make-it").on("click", function(event) {
     // Make sure to preventDefault on a submit event.
     event.preventDefault();
-
+    console.log("button clicked")
     var newBurger = {
       name: $("#textarea").val().trim(),
-      devoured: false
+      devoured: 0
     };
-
+    console.log(newBurger)
     // Send the POST request.
     $.ajax("/api/burgers", {
       type: "POST",

@@ -3,12 +3,13 @@
         
         <div class="col-md text-center" id="made">
             <h2 class="text-warning">-Burgers Made-</h2>
+            <br>
             <ul>
-            {{#each burger}}
-                {{#unless devoured}}
-                    {{> burger/burger-block devoured=true}}
-                {{/unless}}
-            {{/each}}
+                {{#each burgers}}
+                    {{#unless this.devoured}}
+                        {{> burger/burger-block}}
+                    {{/unless}}
+                {{/each}}
             </ul>
         </div>
         
@@ -18,10 +19,11 @@
         
         <div class="col-md text-center" id="devoured">
             <h2 class="text-warning">-Burgers Devoured-</h2>
+            <br>
             <ul>
-            {{#each burger}}
-                {{#if devoured}}
-                
+            {{#each burgers}}
+                {{#if this.devoured}}
+                    <h5>{{this.id}}. {{this.name}}</h5>
                 {{/if}}
             {{/each}}
             </ul>
@@ -40,4 +42,4 @@
     </div>
     
 </div>
-<script src="/assets/js/burgers.js"></script>
+

@@ -17,4 +17,6 @@ img {
   font-family: 'Sedgwick Ave', cursive;  
 }
 
-
+button {
+  margin: 8px;
+}
